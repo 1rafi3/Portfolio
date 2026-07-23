@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@config "../../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --brand-bg: #0f172a;
+    --brand-accent: #3b82f6;
+    --brand-text: #f8fafc;
+
+    --background: oklch(0.13 0.02 260);
+    --foreground: oklch(0.96 0.005 90);
+    --card: oklch(0.19 0.025 265);
+    --card-foreground: oklch(0.96 0.005 90);
+    --popover: oklch(0.19 0.025 265);
+    --popover-foreground: oklch(0.96 0.005 90);
+    --primary: oklch(0.55 0.2 260);
+    --primary-foreground: oklch(0.13 0.02 260);
+    --secondary: oklch(0.24 0.02 265);
+    --secondary-foreground: oklch(0.96 0.005 90);
+    --muted: oklch(0.24 0.02 265);
+    --muted-foreground: oklch(0.7 0.005 90);
+    --accent: oklch(0.55 0.2 260 / 0.15);
+    --accent-foreground: oklch(0.55 0.2 260);
+    --destructive: oklch(0.58 0.24 27);
+    --border: oklch(0.96 0.005 90 / 0.1);
+    --input: oklch(0.96 0.005 90 / 0.1);
+    --ring: oklch(0.55 0.2 260 / 0.5);
+    --chart-1: oklch(0.55 0.2 260);
+    --chart-2: oklch(0.6 0.15 200);
+    --chart-3: oklch(0.5 0.15 300);
+    --chart-4: oklch(0.7 0.15 80);
+    --chart-5: oklch(0.7 0.15 30);
+    --radius: 0.5rem;
+    --sidebar: oklch(0.19 0.025 265);
+    --sidebar-foreground: oklch(0.96 0.005 90);
+    --sidebar-primary: oklch(0.55 0.2 260);
+    --sidebar-primary-foreground: oklch(0.13 0.02 260);
+    --sidebar-accent: oklch(0.55 0.2 260 / 0.15);
+    --sidebar-accent-foreground: oklch(0.96 0.005 90);
+    --sidebar-border: oklch(0.96 0.005 90 / 0.1);
+    --sidebar-ring: oklch(0.55 0.2 260 / 0.5);
+  }
+
+  * {
+    border-color: var(--border);
+    outline-color: var(--ring);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: oklch(0.55 0.2 260 / 0.2);
+    color: oklch(0.96 0.005 90);
+  }
+
+  :focus-visible {
+    outline: 2px solid oklch(0.55 0.2 260);
+    outline-offset: 2px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.96 0.005 90 / 0.1) transparent;
+  }
+
+  .section-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      oklch(0.96 0.005 90 / 0.08),
+      transparent
+    );
+  }
+}
