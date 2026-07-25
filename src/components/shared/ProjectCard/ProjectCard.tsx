@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, FolderCode } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -22,6 +23,7 @@ const PLACEHOLDER_COLORS = [
 export function ProjectCard({ project }: TProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [thumbnailError, setThumbnailError] = useState(false);
   const shouldReduceMotion = useReducedMotion();
 
   const colorClass =
@@ -46,7 +48,18 @@ export function ProjectCard({ project }: TProjectCardProps) {
         className={`flex aspect-video items-center justify-center overflow-hidden bg-gradient-to-br transition-all duration-500 group-hover/card:scale-105 ${colorClass}`}
         aria-hidden="true"
       >
-        <FolderCode className="h-12 w-12 text-foreground/15 transition-all duration-300 group-hover/card:scale-110 group-hover/card:text-foreground/25" />
+        {project.thumbnail && !thumbnailError ? (
+          <Image
+            src={project.thumbnail.src}
+            alt={project.thumbnail.alt}
+            width={project.thumbnail.width}
+            height={project.thumbnail.height}
+            className="h-full w-full object-cover"
+            onError={() => setThumbnailError(true)}
+          />
+        ) : (
+          <FolderCode className="h-12 w-12 text-foreground/15 transition-all duration-300 group-hover/card:scale-110 group-hover/card:text-foreground/25" />
+        )}
       </div>
 
       <div className="flex flex-1 flex-col gap-3 p-6">

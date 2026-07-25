@@ -51,6 +51,29 @@ section[id] {
     --sidebar-accent-foreground: oklch(0.96 0.005 90);
     --sidebar-border: oklch(0.96 0.005 90 / 0.1);
     --sidebar-ring: oklch(0.55 0.2 260 / 0.5);
+
+    /* ── Theme-aware Hero / Footer decoration tokens (dark defaults) ── */
+    --hero-base: #030712;
+    --hero-vignette-from: #030712;
+    --hero-particle-opacity: 1;
+    --hero-decoration-opacity: 1;
+    --hero-glow-opacity: 0.35;
+    --hero-glow-secondary-opacity: 0.25;
+    --hero-cube-stroke: #00E5FF;
+    --footer-bg: #030712;
+    --footer-border: rgba(0,229,255,0.15);
+    --footer-text: rgb(203 213 225);
+    --footer-muted: rgb(148 163 184);
+    --footer-subtle: rgb(100 116 139);
+    --footer-card-bg: rgba(15,23,42,0.4);
+    --footer-card-border: rgba(30,41,59,0.8);
+    --footer-card-hover-bg: rgba(0,229,255,0.1);
+    --footer-card-hover-border: rgba(0,229,255,0.4);
+    --footer-divider: rgba(30,41,59,0.8);
+    --footer-status-bg: rgba(15,23,42,0.7);
+    --footer-status-border: #1e293b;
+    --cyan-accent: #00E5FF;
+    --cyan-accent-muted: #06b6d4;
   }
 
   .light {
@@ -85,6 +108,29 @@ section[id] {
     --sidebar-accent-foreground: oklch(0.55 0.2 260);
     --sidebar-border: oklch(0.13 0.02 260 / 0.08);
     --sidebar-ring: oklch(0.55 0.2 260 / 0.4);
+
+    /* ── Theme-aware Hero / Footer decoration tokens (light overrides) ── */
+    --hero-base: #f8fafc;
+    --hero-vignette-from: #f8fafc;
+    --hero-particle-opacity: 0.5;
+    --hero-decoration-opacity: 0.6;
+    --hero-glow-opacity: 0.18;
+    --hero-glow-secondary-opacity: 0.12;
+    --hero-cube-stroke: #0891b2;
+    --footer-bg: #f8fafc;
+    --footer-border: rgba(0,0,0,0.06);
+    --footer-text: rgb(51 65 85);
+    --footer-muted: rgb(71 85 105);
+    --footer-subtle: rgb(100 116 139);
+    --footer-card-bg: rgba(255,255,255,0.9);
+    --footer-card-border: rgba(226,232,240,0.9);
+    --footer-card-hover-bg: rgba(207,250,254,0.5);
+    --footer-card-hover-border: rgba(6,182,212,0.4);
+    --footer-divider: rgb(226 232 240);
+    --footer-status-bg: rgb(241 245 249);
+    --footer-status-border: rgb(226 232 240);
+    --cyan-accent: #0891b2;
+    --cyan-accent-muted: #0e7490;
   }
 
   * {

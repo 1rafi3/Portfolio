@@ -1,5 +1,8 @@
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { SOCIAL_LINKS } from "@/config/social";
+
+const GITHUB_LINK = SOCIAL_LINKS.find((s) => s.platform === "GitHub");
 
 export function GitHubActivitySection() {
   return (
@@ -29,7 +32,7 @@ export function GitHubActivitySection() {
               and activity.
             </p>
             <a
-              href="https://github.com/rafiwol"
+              href={GITHUB_LINK?.url ?? "https://github.com"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-all duration-200 hover:gap-3"

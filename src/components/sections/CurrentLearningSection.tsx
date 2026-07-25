@@ -4,33 +4,9 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { StaggerContainer } from "@/components/shared/StaggerContainer";
 import { StaggerItem } from "@/components/shared/StaggerItem";
+import { HOMEPAGE } from "@/data/homepage";
 
-const CURRENT_FOCUS = [
-  {
-    icon: Brain,
-    title: "AI & Machine Learning",
-    description:
-      "Exploring LLMs, prompt engineering, and integrating AI capabilities into web applications.",
-  },
-  {
-    icon: Database,
-    title: "Backend Architecture",
-    description:
-      "Deepening my understanding of databases, API design, and server-side architecture patterns.",
-  },
-  {
-    icon: Globe,
-    title: "Full-Stack Integration",
-    description:
-      "Building end-to-end applications that connect modern frontends with robust backends.",
-  },
-  {
-    icon: BookOpen,
-    title: "Computer Science Fundamentals",
-    description:
-      "Strengthening my foundation in algorithms, data structures, and software engineering principles.",
-  },
-];
+const FOCUS_ICONS = [Brain, Database, Globe, BookOpen] as const;
 
 export function CurrentLearningSection() {
   return (
@@ -42,11 +18,13 @@ export function CurrentLearningSection() {
           </SectionHeading>
 
           <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-            {CURRENT_FOCUS.map((item) => (
+            {HOMEPAGE.currentLearning.map((item, i) => {
+              const Icon = FOCUS_ICONS[i] ?? BookOpen;
+              return (
               <StaggerItem key={item.title}>
                 <div className="group flex items-start gap-4 rounded-lg border border-border/50 bg-card p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-110">
-                    <item.icon className="h-5 w-5" />
+                    <Icon className="h-5 w-5" />
                   </div>
                   <div>
                     <h3 className="text-base font-semibold text-foreground">
@@ -58,7 +36,8 @@ export function CurrentLearningSection() {
                   </div>
                 </div>
               </StaggerItem>
-            ))}
+            );
+          })}
           </StaggerContainer>
         </div>
       </section>

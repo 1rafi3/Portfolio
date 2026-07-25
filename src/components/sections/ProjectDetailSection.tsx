@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FolderCode, Lightbulb, Target, Sparkles, ListChecks } from "lucide-react";
 
@@ -43,6 +47,8 @@ function DetailBlock({
 }
 
 export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
+  const [heroError, setHeroError] = useState(false);
+  const [galleryErrors, setGalleryErrors] = useState<Record<number, boolean>>({});
   const project: IProject | undefined = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -60,8 +66,20 @@ export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
           Back to Projects
         </Link>
 
-        <div className="flex aspect-video items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-primary/5">
-          <FolderCode className="h-12 w-12 text-foreground/20" />
+        <div className="flex aspect-video items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-primary/5">
+          {project.heroImage && !heroError ? (
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              width={project.heroImage.width}
+              height={project.heroImage.height}
+              className="h-full w-full object-cover"
+              priority
+              onError={() => setHeroError(true)}
+            />
+          ) : (
+            <FolderCode className="h-12 w-12 text-foreground/20" />
+          )}
         </div>
 
         <div className="mt-8 space-y-2">
@@ -142,16 +160,43 @@ export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
             Gallery
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="flex aspect-video items-center justify-center rounded-lg border-2 border-dashed border-border/50 bg-muted/30 transition-colors hover:border-primary/20"
-              >
-                <p className="text-xs text-muted-foreground/60">
-                  Screenshot {i}
-                </p>
-              </div>
-            ))}
+            {project.gallery && project.gallery.length > 0
+              ? project.gallery.map((img, i) => (
+                  galleryErrors[i] ? (
+                    <div
+                      key={i}
+                      className="flex aspect-video items-center justify-center rounded-lg border-2 border-dashed border-border/50 bg-muted/30 transition-colors hover:border-primary/20"
+                    >
+                      <p className="text-xs text-muted-foreground/60">
+                        Screenshot {i + 1}
+                      </p>
+                    </div>
+                  ) : (
+                    <div
+                      key={i}
+                      className="flex aspect-video items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-primary/10 to-primary/5"
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        width={img.width}
+                        height={img.height}
+                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                        onError={() => setGalleryErrors((prev) => ({ ...prev, [i]: true }))}
+                      />
+                    </div>
+                  )
+                ))
+              : [1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="flex aspect-video items-center justify-center rounded-lg border-2 border-dashed border-border/50 bg-muted/30 transition-colors hover:border-primary/20"
+                  >
+                    <p className="text-xs text-muted-foreground/60">
+                      Screenshot {i}
+                    </p>
+                  </div>
+                ))}
           </div>
         </div>
       </div>

@@ -3,52 +3,31 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 import type { ISkill } from "@/types/skill";
+import { TechIcon } from "@/components/shared/TechIcon";
 
 interface ISkillBadgeProps {
   skill: ISkill;
 }
 
-const CATEGORY_COLORS: Record<string, string> = {
-  Frontend: "oklch(0.55 0.2 260)",
-  Languages: "oklch(0.6 0.15 200)",
-  "Tools & Platforms": "oklch(0.7 0.15 80)",
-};
-
 export function SkillBadge({ skill }: ISkillBadgeProps) {
   const shouldReduceMotion = useReducedMotion();
-  const accentColor = CATEGORY_COLORS[skill.category ?? ""] ?? "oklch(0.55 0.2 260)";
 
   const content = (
-    <div
-      className="group flex items-center gap-3 rounded-lg border border-border/50 bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:bg-muted/50"
-      style={{
-        transitionProperty: "transform, border-color, background-color, box-shadow",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.borderColor = `color-mix(in oklch, ${accentColor}, transparent 50%)`;
-        e.currentTarget.style.boxShadow = `0 1px 3px 0 color-mix(in oklch, ${accentColor}, transparent 80%)`;
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.borderColor = `var(--border)`;
-        e.currentTarget.style.boxShadow = "";
-      }}
-    >
-      <div
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg text-sm font-semibold transition-all duration-200 group-hover:scale-110"
-        style={{
-          backgroundColor: `color-mix(in oklch, ${accentColor}, transparent 85%)`,
-          color: accentColor,
-        }}
-      >
-        {skill.name.charAt(0)}
+    <div className="group relative flex items-center gap-3.5 rounded-xl border border-slate-800/80 bg-slate-900/60 p-3.5 transition-all duration-300 hover:border-[#00E5FF]/50 hover:bg-[#00E5FF]/5 hover:shadow-[0_0_20px_rgba(0,229,255,0.25)] light:bg-white light:border-slate-200 light:shadow-sm light:hover:border-cyan-500/50 light:hover:bg-cyan-50/50 light:hover:shadow-[0_4px_20px_rgba(0,229,255,0.18)]">
+      {/* Icon Container */}
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-800 bg-slate-950/80 p-2 text-slate-200 transition-all duration-300 group-hover:scale-110 group-hover:border-[#00E5FF]/40 group-hover:shadow-[0_0_12px_rgba(0,229,255,0.3)] light:border-slate-200 light:bg-slate-50 light:text-slate-700 light:group-hover:border-cyan-500/40">
+        <TechIcon name={skill.name} className="h-5 w-5" />
       </div>
-      <div>
-        <p className="text-base font-semibold text-foreground">{skill.name}</p>
-        {skill.yearsOfExperience && (
-          <p className="text-xs text-muted-foreground/70">
-            {skill.yearsOfExperience} yr
-            {skill.yearsOfExperience > 1 ? "s" : ""}
-          </p>
+
+      {/* Content Label */}
+      <div className="flex flex-col">
+        <span className="text-sm font-semibold text-slate-100 transition-colors group-hover:text-[#00E5FF] light:text-slate-900 light:group-hover:text-cyan-600">
+          {skill.name}
+        </span>
+        {skill.category && (
+          <span className="text-[11px] font-mono text-slate-400 light:text-slate-500">
+            {skill.category}
+          </span>
         )}
       </div>
     </div>
@@ -58,8 +37,8 @@ export function SkillBadge({ skill }: ISkillBadgeProps) {
 
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      whileHover={{ y: -3, scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 350, damping: 22 }}
     >
       {content}
     </motion.div>

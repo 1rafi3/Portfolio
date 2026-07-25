@@ -4,33 +4,9 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { StaggerContainer } from "@/components/shared/StaggerContainer";
 import { StaggerItem } from "@/components/shared/StaggerItem";
+import { HOMEPAGE } from "@/data/homepage";
 
-const REASONS = [
-  {
-    icon: Code2,
-    title: "Clean Code",
-    description:
-      "I write maintainable, well-structured code that scales. Every project follows consistent patterns and best practices.",
-  },
-  {
-    icon: Sparkles,
-    title: "Attention to Detail",
-    description:
-      "From pixel-perfect UI to smooth micro-interactions, I care about the experience users have with every part of an application.",
-  },
-  {
-    icon: Rocket,
-    title: "Fast & Modern",
-    description:
-      "Leveraging cutting-edge tools like Next.js, React, and Tailwind CSS to build performant, accessible web applications.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Problem Solver",
-    description:
-      "I enjoy tackling complex challenges and finding creative, efficient solutions that balance business needs with technical excellence.",
-  },
-];
+const REASON_ICONS = [Code2, Sparkles, Rocket, Lightbulb] as const;
 
 export function WhyWorkWithMeSection() {
   return (
@@ -42,11 +18,13 @@ export function WhyWorkWithMeSection() {
           </SectionHeading>
 
           <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-            {REASONS.map((reason) => (
+            {HOMEPAGE.whyWorkWithMe.map((reason, i) => {
+              const Icon = REASON_ICONS[i] ?? Lightbulb;
+              return (
               <StaggerItem key={reason.title}>
                 <div className="group rounded-lg border border-border/50 bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary transition-all duration-200 group-hover:bg-primary/15 group-hover:scale-110">
-                    <reason.icon className="h-5 w-5" />
+                    <Icon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-foreground">
                     {reason.title}
@@ -56,7 +34,8 @@ export function WhyWorkWithMeSection() {
                   </p>
                 </div>
               </StaggerItem>
-            ))}
+            );
+          })}
           </StaggerContainer>
         </div>
       </section>

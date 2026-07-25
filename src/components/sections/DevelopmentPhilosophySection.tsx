@@ -2,33 +2,7 @@ import { SectionHeading } from "@/components/shared/SectionHeading";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { StaggerContainer } from "@/components/shared/StaggerContainer";
 import { StaggerItem } from "@/components/shared/StaggerItem";
-
-const PRINCIPLES = [
-  {
-    number: "01",
-    title: "Simplicity First",
-    description:
-      "I believe great software starts with simple, readable code. Every feature should justify its existence and serve a clear purpose.",
-  },
-  {
-    number: "02",
-    title: "User-Centered Design",
-    description:
-      "Every pixel, interaction, and animation is crafted with the end user in mind. Good UX is invisible — it just feels right.",
-  },
-  {
-    number: "03",
-    title: "Continuous Learning",
-    description:
-      "Technology evolves fast. I stay curious, experiment with new tools, and bring fresh perspectives to every project.",
-  },
-  {
-    number: "04",
-    title: "Quality Over Quantity",
-    description:
-      "I'd rather build one well-architected feature than ten half-baked ones. Thorough testing and clean architecture are non-negotiable.",
-  },
-];
+import { HOMEPAGE } from "@/data/homepage";
 
 export function DevelopmentPhilosophySection() {
   return (
@@ -40,7 +14,7 @@ export function DevelopmentPhilosophySection() {
           </SectionHeading>
 
           <StaggerContainer className="mt-12 grid gap-6 sm:grid-cols-2">
-            {PRINCIPLES.map((principle) => (
+            {HOMEPAGE.developmentPhilosophy.map((principle) => (
               <StaggerItem key={principle.number}>
                 <div className="group rounded-lg border border-border/50 bg-card p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-md hover:shadow-primary/5">
                   <span className="text-3xl font-bold tracking-tight text-primary/20 transition-colors duration-200 group-hover:text-primary/30">

@@ -2,9 +2,9 @@ import type { IResume } from "@/types/resume";
 
 export const resume: IResume = {
   file: {
-    url: "/resume.pdf",
+    url: "/resume/resume.pdf",
     format: "pdf",
   },
-  lastUpdated: "",
+  lastUpdated: "2026-07",
   available: false,
 };

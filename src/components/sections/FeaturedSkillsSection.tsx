@@ -16,10 +16,10 @@ export function FeaturedSkillsSection() {
 
           {skillCategories.map((category) => (
             <div key={category.categoryName} className="mt-10 first:mt-12">
-              <h3 className="mb-5 text-lg font-semibold text-foreground">
+              <h3 className="mb-4 text-base font-mono font-semibold uppercase tracking-wider text-[#00E5FF] light:text-cyan-600">
                 {category.categoryName}
               </h3>
-              <StaggerContainer className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <StaggerContainer className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {category.skills.map((skill) => (
                   <StaggerItem key={skill.name}>
                     <SkillBadge skill={skill} />

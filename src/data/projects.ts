@@ -1,5 +1,9 @@
 import type { IProject } from "@/types/project";
 
+function img(slug: string, file: string, alt: string, w = 1200, h = 675) {
+  return { src: `/images/projects/${slug}/${file}`, alt, width: w, height: h };
+}
+
 export const projects: IProject[] = [
   {
     title: "RentNest",
@@ -8,6 +12,13 @@ export const projects: IProject[] = [
       "A premium co-living and rental platform for discovering hand-picked spaces with modern amenities.",
     fullDescription:
       "RentNest is a full-featured property rental platform that connects tenants with premium co-living spaces, apartments, studios, and villas. The platform features advanced search and filtering, secure billing, digital smart door access, and a community-focused experience with coworking lounges and networking events. Built as a full-stack application with a focus on modern UI/UX and seamless booking workflows.",
+    thumbnail: img("rentnest", "thumbnail.webp", "RentNest project thumbnail"),
+    heroImage: img("rentnest", "hero.png", "RentNest hero preview", 1600, 900),
+    gallery: [
+      img("rentnest", "gallery-1.png", "RentNest screenshot 1"),
+      img("rentnest", "gallery-2.png", "RentNest screenshot 2"),
+      img("rentnest", "gallery-3.png", "RentNest screenshot 3"),
+    ],
     category: "Full-Stack",
     status: "completed",
     techStack: ["Next.js", "React", "Tailwind CSS", "Vercel"],
@@ -44,6 +55,13 @@ export const projects: IProject[] = [
       "An AI-powered learning coach that helps students study smarter with personalized assistance.",
     fullDescription:
       "IntelliStudy AI is an intelligent learning platform designed to act as a personal AI coach for students. It leverages modern web technologies to provide an interactive and adaptive learning experience. The platform aims to make studying more efficient by providing personalized recommendations and AI-driven assistance.",
+    thumbnail: img("intellistudy-ai", "thumbnail.png", "IntelliStudy AI project thumbnail"),
+    heroImage: img("intellistudy-ai", "hero.png", "IntelliStudy AI hero preview", 1600, 900),
+    gallery: [
+      img("intellistudy-ai", "gallery-1.png", "IntelliStudy AI screenshot 1"),
+      img("intellistudy-ai", "gallery-2.png", "IntelliStudy AI screenshot 2"),
+      img("intellistudy-ai", "gallery-3.png", "IntelliStudy AI screenshot 3"),
+    ],
     category: "Full-Stack",
     status: "completed",
     techStack: ["Next.js", "React", "AI", "Vercel"],
@@ -79,6 +97,13 @@ export const projects: IProject[] = [
       "A modern client-facing web application built with Next.js demonstrating full-stack development practices.",
     fullDescription:
       "A09 Client is a web application built as part of learning and mastering full-stack development with Next.js. It demonstrates practical implementation of modern web development practices including server-side rendering, API integration, and responsive design patterns.",
+    thumbnail: img("a09-client", "thumbnail.webp", "A09 Client project thumbnail"),
+    heroImage: img("a09-client", "hero.png", "A09 Client hero preview", 1600, 900),
+    gallery: [
+      img("a09-client", "gallery-1.png", "A09 Client screenshot 1"),
+      img("a09-client", "gallery-2.png", "A09 Client screenshot 2"),
+      img("a09-client", "gallery-3.png", "A09 Client screenshot 3"),
+    ],
     category: "Web App",
     status: "completed",
     techStack: ["Next.js", "React", "Tailwind CSS"],
