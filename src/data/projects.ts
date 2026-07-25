@@ -97,7 +97,7 @@ export const projects: IProject[] = [
       "A modern client-facing web application built with Next.js demonstrating full-stack development practices.",
     fullDescription:
       "A09 Client is a web application built as part of learning and mastering full-stack development with Next.js. It demonstrates practical implementation of modern web development practices including server-side rendering, API integration, and responsive design patterns.",
-    thumbnail: img("a09-client", "thumbnail.webp", "A09 Client project thumbnail"),
+    thumbnail: img("a09-client", "thumbnail.png", "A09 Client project thumbnail"),
     heroImage: img("a09-client", "hero.png", "A09 Client hero preview", 1600, 900),
     gallery: [
       img("a09-client", "gallery-1.png", "A09 Client screenshot 1"),
