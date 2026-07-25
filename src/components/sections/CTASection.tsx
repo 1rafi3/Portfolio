@@ -2,11 +2,12 @@ import Link from "next/link";
 import { ArrowRight, Send } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 
 export function CTASection() {
   return (
-    <section className="px-4 py-24 sm:px-6 lg:px-8">
-      <hr className="section-divider mb-24" />
+    <ScrollReveal>
+      <section className="section-alt px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl text-center">
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Let&apos;s Work Together
@@ -26,6 +27,7 @@ export function CTASection() {
           </Button>
         </div>
       </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

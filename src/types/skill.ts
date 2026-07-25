@@ -3,6 +3,7 @@ export interface ISkill {
   icon?: string;
   proficiency?: number;
   yearsOfExperience?: number;
+  category?: string;
 }
 
 export interface ISkillCategory {

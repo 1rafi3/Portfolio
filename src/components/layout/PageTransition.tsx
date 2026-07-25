@@ -1,17 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 interface IPageTransitionProps {
   children: React.ReactNode;
 }
 
 export function PageTransition({ children }: IPageTransitionProps) {
+  const pathname = usePathname();
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <>{children}</>;
+  }
+
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
+      key={pathname}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
     >
       {children}
     </motion.div>

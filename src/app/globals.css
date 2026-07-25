@@ -3,6 +3,16 @@
 @import "shadcn/tailwind.css";
 @config "../../tailwind.config.ts";
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(0.96 0.005 90 / 0.1) transparent;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
+}
+
 @layer base {
   :root {
     --brand-bg: #0f172a;
@@ -43,6 +53,40 @@
     --sidebar-ring: oklch(0.55 0.2 260 / 0.5);
   }
 
+  .light {
+    --background: oklch(0.97 0.005 90);
+    --foreground: oklch(0.13 0.02 260);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.13 0.02 260);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.13 0.02 260);
+    --primary: oklch(0.55 0.2 260);
+    --primary-foreground: oklch(1 0 0);
+    --secondary: oklch(0.9 0.01 260);
+    --secondary-foreground: oklch(0.2 0.03 260);
+    --muted: oklch(0.93 0.005 90);
+    --muted-foreground: oklch(0.55 0.01 260);
+    --accent: oklch(0.55 0.2 260 / 0.1);
+    --accent-foreground: oklch(0.55 0.2 260);
+    --destructive: oklch(0.58 0.24 27);
+    --border: oklch(0.13 0.02 260 / 0.1);
+    --input: oklch(0.13 0.02 260 / 0.1);
+    --ring: oklch(0.55 0.2 260 / 0.4);
+    --chart-1: oklch(0.55 0.2 260);
+    --chart-2: oklch(0.6 0.15 200);
+    --chart-3: oklch(0.5 0.15 300);
+    --chart-4: oklch(0.7 0.15 80);
+    --chart-5: oklch(0.7 0.15 30);
+    --sidebar: oklch(0.95 0.005 90);
+    --sidebar-foreground: oklch(0.13 0.02 260);
+    --sidebar-primary: oklch(0.55 0.2 260);
+    --sidebar-primary-foreground: oklch(1 0 0);
+    --sidebar-accent: oklch(0.55 0.2 260 / 0.1);
+    --sidebar-accent-foreground: oklch(0.55 0.2 260);
+    --sidebar-border: oklch(0.13 0.02 260 / 0.08);
+    --sidebar-ring: oklch(0.55 0.2 260 / 0.4);
+  }
+
   * {
     border-color: var(--border);
     outline-color: var(--ring);
@@ -54,9 +98,34 @@
     font-family: var(--font-inter), system-ui, sans-serif;
   }
 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.55 0.2 260 / 0.06), transparent),
+      radial-gradient(ellipse 50% 30% at 50% 80%, oklch(0.55 0.2 260 / 0.03), transparent),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='oklch(0.96 0.005 90)' fill-opacity='0.02'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .light body::before,
+  .light::before {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, oklch(0.55 0.2 260 / 0.04), transparent),
+      radial-gradient(ellipse 50% 30% at 50% 80%, oklch(0.55 0.2 260 / 0.02), transparent),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='oklch(0 0 0)' fill-opacity='0.02'%3E%3Ccircle cx='1' cy='1' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
   ::selection {
     background-color: oklch(0.55 0.2 260 / 0.2);
     color: oklch(0.96 0.005 90);
+  }
+
+  .light ::selection {
+    background-color: oklch(0.55 0.2 260 / 0.15);
+    color: oklch(0.13 0.02 260);
   }
 
   :focus-visible {
@@ -65,7 +134,6 @@
   }
 
   html {
-    scroll-behavior: smooth;
     scrollbar-width: thin;
     scrollbar-color: oklch(0.96 0.005 90 / 0.1) transparent;
   }
@@ -76,8 +144,30 @@
     background: linear-gradient(
       to right,
       transparent,
-      oklch(0.96 0.005 90 / 0.08),
+      oklch(0.55 0.2 260 / 0.15),
       transparent
     );
+  }
+
+  .section-alt {
+    background-color: oklch(0.15 0.015 260);
+    border-top: 1px solid oklch(0.96 0.005 90 / 0.04);
+    border-bottom: 1px solid oklch(0.96 0.005 90 / 0.04);
+  }
+
+  .light .section-alt {
+    background-color: oklch(0.92 0.01 260);
+    border-top: 1px solid oklch(0.13 0.02 260 / 0.04);
+    border-bottom: 1px solid oklch(0.13 0.02 260 / 0.04);
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 12px oklch(0.55 0.2 260 / 0.15), 0 0 24px oklch(0.55 0.2 260 / 0.05); }
+    50% { box-shadow: 0 0 20px oklch(0.55 0.2 260 / 0.25), 0 0 40px oklch(0.55 0.2 260 / 0.08); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 }

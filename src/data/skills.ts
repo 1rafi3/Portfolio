@@ -4,29 +4,29 @@ export const skillCategories: ISkillCategory[] = [
   {
     categoryName: "Frontend",
     skills: [
-      { name: "Next.js" },
-      { name: "React" },
-      { name: "JavaScript" },
-      { name: "HTML5" },
-      { name: "CSS3" },
-      { name: "daisyUI" },
+      { name: "Next.js", category: "Frontend" },
+      { name: "React", category: "Frontend" },
+      { name: "JavaScript", category: "Frontend" },
+      { name: "HTML5", category: "Frontend" },
+      { name: "CSS3", category: "Frontend" },
+      { name: "daisyUI", category: "Frontend" },
     ],
   },
   {
     categoryName: "Languages",
     skills: [
-      { name: "C" },
-      { name: "C++" },
-      { name: "JavaScript" },
-      { name: "Python" },
+      { name: "C", category: "Languages" },
+      { name: "C++", category: "Languages" },
+      { name: "JavaScript", category: "Languages" },
+      { name: "Python", category: "Languages" },
     ],
   },
   {
     categoryName: "Tools & Platforms",
     skills: [
-      { name: "Git" },
-      { name: "GitHub" },
-      { name: "Vercel" },
+      { name: "Git", category: "Tools & Platforms" },
+      { name: "GitHub", category: "Tools & Platforms" },
+      { name: "Vercel", category: "Tools & Platforms" },
     ],
   },
 ];

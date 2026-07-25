@@ -1,21 +1,33 @@
+"use client";
+
 import Link from "next/link";
 import { Download, FileText, Calendar } from "lucide-react";
 
 import { resume } from "@/data/resume";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { showToast } from "@/components/shared/Toast";
 
 export function ResumeSection() {
+  function handleDownload(e: React.MouseEvent) {
+    if (!resume.available) {
+      e.preventDefault();
+      showToast("Resume will be available soon. I'm currently preparing a professional version.", "info");
+    }
+  }
+
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8">
+    <ScrollReveal>
+      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <SectionHeading variant="page" subtitle="My professional résumé">
           Resume
         </SectionHeading>
 
-        <div className="mt-12 rounded-xl border border-border/50 bg-card p-8 transition-all duration-200 hover:border-primary/20 hover:shadow-sm">
+        <div className="mt-12 rounded-lg border border-border/50 bg-card p-8 transition-all duration-200 hover:border-primary/20 hover:shadow-sm">
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-primary/10">
+            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-primary/10">
               <FileText className="h-8 w-8 text-primary" />
             </div>
             <div className="flex-1">
@@ -35,8 +47,14 @@ export function ResumeSection() {
             </div>
             <Button
               className="shrink-0"
+              disabled={!resume.available}
               render={
-                <Link href={resume.file.url} target="_blank" rel="noopener noreferrer" />
+                <Link
+                  href={resume.file.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleDownload}
+                />
               }
             >
               <Download className="h-4 w-4" />
@@ -47,7 +65,7 @@ export function ResumeSection() {
 
         <div className="mt-10">
           <h3 className="text-lg font-semibold text-foreground">Preview</h3>
-          <div className="mt-4 flex aspect-[210/297] w-full items-center justify-center rounded-xl border-2 border-dashed border-border/50 bg-muted/20 transition-colors hover:border-primary/20">
+          <div className="mt-4 flex aspect-[210/297] w-full items-center justify-center rounded-lg border-2 border-dashed border-border/50 bg-muted/20 transition-colors hover:border-primary/20">
             <div className="flex flex-col items-center gap-3 text-center">
               <FileText className="h-10 w-10 text-muted-foreground/40" />
               <p className="text-sm text-muted-foreground/60">
@@ -57,6 +75,7 @@ export function ResumeSection() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

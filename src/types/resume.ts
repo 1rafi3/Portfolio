@@ -14,6 +14,7 @@ export interface IResumeVersion {
 export interface IResume {
   file: IResumeFile;
   lastUpdated: string;
+  available: boolean;
   versions?: IResumeVersion[];
   highlights?: string[];
 }

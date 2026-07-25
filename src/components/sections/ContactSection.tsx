@@ -3,12 +3,14 @@ import { Mail, MapPin, MessageSquare } from "lucide-react";
 import { contact } from "@/data/contact";
 import { SOCIAL_LINKS } from "@/config/social";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { SocialLink } from "@/components/shared/SocialLink";
 import { ContactForm } from "@/components/features/ContactForm";
 
 export function ContactSection() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8">
+    <ScrollReveal>
+      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
         <SectionHeading variant="page" subtitle="Get in touch">
           Contact
@@ -16,11 +18,11 @@ export function ContactSection() {
 
         <div className="mt-12 grid gap-10 lg:grid-cols-5">
           <div className="space-y-6 lg:col-span-2">
-            <div className="rounded-xl border border-border/50 bg-card p-6">
+            <div className="rounded-lg border border-border/50 bg-card p-6">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                    <Mail className="h-5 w-5 text-primary" />
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-foreground">Email</p>
@@ -36,7 +38,7 @@ export function ContactSection() {
                 {contact.location && (
                   <div className="flex items-start gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <MapPin className="h-5 w-5 text-primary" />
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Location</p>
@@ -50,7 +52,7 @@ export function ContactSection() {
                 {contact.responseTime && (
                   <div className="flex items-start gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <MessageSquare className="h-5 w-5 text-primary" />
+                      <MessageSquare className="h-6 w-6 text-primary" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-foreground">Response Time</p>
@@ -63,7 +65,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border/50 bg-card p-6">
+            <div className="rounded-lg border border-border/50 bg-card p-6">
               <p className="mb-4 text-sm font-medium text-foreground">
                 Social Links
               </p>
@@ -89,6 +91,7 @@ export function ContactSection() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

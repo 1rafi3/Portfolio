@@ -5,6 +5,8 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/config/site";
 import { SEO } from "@/config/seo";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
+import { ToastContainer } from "@/components/shared/Toast";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -48,8 +50,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(inter.variable, jetbrainsMono.variable, "font-sans")}>
-      <body className="antialiased">{children}</body>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(inter.variable, jetbrainsMono.variable, "font-sans")}
+    >
+      <body className="antialiased">
+        <ThemeProvider>
+          {children}
+          <ToastContainer />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

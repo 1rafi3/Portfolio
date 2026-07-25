@@ -23,7 +23,7 @@ function DetailBlock({
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="rounded-xl border border-border/50 bg-card p-6">
+    <div className="rounded-lg border border-border/50 bg-card p-6">
       <div className="mb-4 flex items-center gap-2">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10">
           <Icon className="h-4 w-4 text-primary" />
@@ -50,7 +50,7 @@ export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
   }
 
   return (
-    <article className="px-4 py-12 sm:px-6 lg:px-8">
+    <article className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <Link
           href="/projects"
@@ -60,8 +60,8 @@ export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
           Back to Projects
         </Link>
 
-        <div className="flex aspect-video items-center justify-center rounded-xl bg-gradient-to-br from-primary/10 to-primary/5">
-          <FolderCode className="h-16 w-16 text-foreground/20" />
+        <div className="flex aspect-video items-center justify-center rounded-lg bg-gradient-to-br from-primary/10 to-primary/5">
+          <FolderCode className="h-12 w-12 text-foreground/20" />
         </div>
 
         <div className="mt-8 space-y-2">
@@ -137,7 +137,7 @@ export function ProjectDetailSection({ slug }: IProjectDetailSectionProps) {
           />
         </div>
 
-        <div className="mt-12 rounded-xl border border-border/50 bg-card p-6">
+        <div className="mt-12 rounded-lg border border-border/50 bg-card p-6">
           <h2 className="mb-4 text-lg font-semibold text-foreground">
             Gallery
           </h2>

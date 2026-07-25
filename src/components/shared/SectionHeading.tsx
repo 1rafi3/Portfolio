@@ -25,7 +25,9 @@ export function SectionHeading({
           : "items-start text-left"
       }`}
     >
-      <Tag className={headingSize}>{children}</Tag>
+      <Tag className={headingSize}>
+        {children}
+      </Tag>
       {subtitle && (
         <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
           {subtitle}

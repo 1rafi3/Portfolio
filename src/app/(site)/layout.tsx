@@ -2,6 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SkipToContent } from "@/components/layout/SkipToContent";
 import { PageTransition } from "@/components/layout/PageTransition";
+import { BackToTop } from "@/components/layout/BackToTop";
 
 export default function SiteLayout({
   children,
@@ -16,6 +17,7 @@ export default function SiteLayout({
         <PageTransition>{children}</PageTransition>
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }

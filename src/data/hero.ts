@@ -5,6 +5,12 @@ export const hero: IHero = {
   professionalTitle: "Full-Stack Developer",
   shortIntroduction:
     "A passionate full-stack developer building modern web applications",
+  professionalPhoto: {
+    src: "https://i.ibb.co.com/jvp6Tjsd/1755753496865-jfif.jpg",
+    alt: "Professional portrait of MD Sheik Rafiwol Karim Rafi",
+    width: 400,
+    height: 400,
+  },
   professionalSummary:
     "Computer Science student with a strong foundation in full-stack web development. Passionate about crafting intuitive user interfaces and robust backend systems. Currently exploring AI and Machine Learning while building practical applications with modern JavaScript frameworks.",
   ctaButtons: [

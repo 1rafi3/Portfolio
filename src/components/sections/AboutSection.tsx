@@ -1,9 +1,11 @@
 import { about } from "@/data/about";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
 
 export function AboutSection() {
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8">
+    <ScrollReveal>
+      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl">
         <SectionHeading align="left" variant="page" subtitle="Get to know me">
           About Me
@@ -20,7 +22,7 @@ export function AboutSection() {
         )}
 
         {about.personality && about.personality.length > 0 && (
-          <div className="mt-12 rounded-xl border border-border/50 bg-card p-6">
+          <div className="mt-12 rounded-lg border border-border/50 bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground">Personality</h3>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {about.personality.map((trait, i) => (
@@ -34,7 +36,7 @@ export function AboutSection() {
         )}
 
         {about.interests && about.interests.length > 0 && (
-          <div className="mt-8 rounded-xl border border-border/50 bg-card p-6">
+          <div className="mt-8 rounded-lg border border-border/50 bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground">Interests</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {about.interests.map((interest, i) => (
@@ -50,7 +52,7 @@ export function AboutSection() {
         )}
 
         {about.programmingJourney && about.programmingJourney.length > 0 && (
-          <div className="mt-8 rounded-xl border border-border/50 bg-card p-6">
+          <div className="mt-8 rounded-lg border border-border/50 bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground">
               My Journey
             </h3>
@@ -68,7 +70,7 @@ export function AboutSection() {
         )}
 
         {about.careerGoals && about.careerGoals.length > 0 && (
-          <div className="mt-8 rounded-xl border border-border/50 bg-card p-6">
+          <div className="mt-8 rounded-lg border border-border/50 bg-card p-6">
             <h3 className="text-lg font-semibold text-foreground">
               Career Goals
             </h3>
@@ -83,6 +85,7 @@ export function AboutSection() {
           </div>
         )}
       </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

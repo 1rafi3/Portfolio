@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 
 import { NAVIGATION } from "@/config/navigation";
-import { cn } from "@/lib/utils";
+import { cn, isActiveRoute } from "@/lib/utils";
 import type { INavLink } from "@/types/common";
 
 interface IMobileNavProps {
@@ -18,15 +18,10 @@ interface IMobileNavProps {
 function MobileNavLink({
   label,
   href,
-  active,
+  pathname,
   onClose,
-}: INavLink & { onClose: () => void }) {
-  const pathname = usePathname();
-  const isActive = active.exact
-    ? pathname === href
-    : active.pattern
-      ? pathname.startsWith(active.pattern)
-      : false;
+}: INavLink & { pathname: string; onClose: () => void }) {
+  const isActive = isActiveRoute(pathname, href);
 
   return (
     <Link
@@ -34,13 +29,16 @@ function MobileNavLink({
       onClick={onClose}
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "flex h-11 items-center rounded-lg px-4 text-sm font-medium transition-colors",
+        "relative flex h-12 items-center rounded-lg px-4 text-sm font-medium transition-all duration-200",
         isActive
           ? "bg-accent text-accent-foreground"
           : "text-muted-foreground hover:bg-accent/50 hover:text-foreground",
       )}
     >
-      {label}
+      {isActive && (
+        <span className="absolute left-0 top-1/2 h-5 w-0.5 -translate-y-1/2 rounded-full bg-primary" />
+      )}
+      <span className="ml-2">{label}</span>
     </Link>
   );
 }
@@ -99,6 +97,7 @@ export function MobileNav({ open, onClose }: IMobileNavProps) {
               {NAVIGATION.map((link) => (
                 <MobileNavLink
                   key={link.href}
+                  pathname={pathname}
                   onClose={onClose}
                   {...link}
                 />

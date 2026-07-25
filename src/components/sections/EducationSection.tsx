@@ -1,5 +1,8 @@
 import { education } from "@/data/education";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { ScrollReveal } from "@/components/shared/ScrollReveal";
+import { StaggerContainer } from "@/components/shared/StaggerContainer";
+import { StaggerItem } from "@/components/shared/StaggerItem";
 import { TimelineItem } from "@/components/shared/TimelineItem";
 import type { ITimelineEntry } from "@/components/shared/TimelineItem";
 
@@ -17,18 +20,24 @@ export function EducationSection() {
   }));
 
   return (
-    <section className="px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl">
-        <SectionHeading variant="page" subtitle="My academic background">
-          Education
-        </SectionHeading>
+    <ScrollReveal>
+      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl">
+          <SectionHeading variant="page" subtitle="My academic background">
+            Education
+          </SectionHeading>
 
-        <div className="mt-12 rounded-xl border border-border/50 bg-card p-6">
-          {entries.map((entry) => (
-            <TimelineItem key={entry.title} entry={entry} />
-          ))}
+          <div className="mt-12 rounded-lg border border-border/50 bg-card p-6">
+            <StaggerContainer staggerDelay={0.1}>
+              {entries.map((entry) => (
+                <StaggerItem key={entry.title}>
+                  <TimelineItem entry={entry} />
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }
