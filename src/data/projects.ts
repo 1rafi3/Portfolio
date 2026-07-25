@@ -91,6 +91,70 @@ export const projects: IProject[] = [
     order: 2,
   },
   {
+    title: "Qurbani Market",
+    slug: "qurbani-market",
+    shortDescription:
+      "A modern full-stack livestock marketplace built for Qurbani, enabling users to browse, filter, and book verified animals through a responsive and user-friendly web application.",
+    fullDescription:
+      "Qurbani Market is a modern full-stack web application designed to simplify the process of purchasing livestock for Qurbani. The platform allows users to browse premium animals, filter listings by category and price, view detailed specifications, and book livestock through an intuitive booking system. To provide a realistic user experience, the application includes authentication with both email/password and Google OAuth, user profile management, protected routes, and booking history. Built with Next.js App Router, React Context API, and Tailwind CSS, the project demonstrates scalable frontend architecture, responsive design, and localization for the Bangladeshi market using BDT currency formatting and Bengali content.",
+    thumbnail: img("qurbani-market", "thumbnail.png", "Qurbani Market project thumbnail"),
+    heroImage: img("qurbani-market", "hero.png", "Qurbani Market hero preview", 1600, 900),
+    gallery: [
+      img("qurbani-market", "gallery-1.png", "Qurbani Market screenshot 1"),
+      img("qurbani-market", "gallery-2.png", "Qurbani Market screenshot 2"),
+      img("qurbani-market", "gallery-3.png", "Qurbani Market screenshot 3"),
+    ],
+    category: "Full-Stack E-Commerce",
+    status: "completed",
+    techStack: [
+      "React 19",
+      "Next.js 16",
+      "Tailwind CSS v4",
+      "NextAuth",
+      "Google OAuth",
+      "JavaScript",
+    ],
+    features: [
+      "Responsive livestock marketplace with featured animals on the homepage",
+      "Animal filtering and price sorting with detailed information pages",
+      "Secure booking workflow with email/password and Google OAuth authentication",
+      "User profile management with booking history",
+      "Protected routes and responsive mobile navigation",
+      "Loading states and custom 404 page",
+    ],
+    challenges: [
+      "Designed a hybrid authentication system combining Google OAuth with a custom authentication flow",
+      "Implemented persistent user-specific booking data using LocalStorage without a backend database",
+      "Managed Client and Server Component architecture using the Next.js App Router",
+      "Localized the application with Bengali content and Bangladeshi currency formatting",
+      "Built a responsive sticky booking interface that works across different screen sizes",
+    ],
+    lessonsLearned: [
+      "Structuring scalable applications using the Next.js App Router",
+      "Building reusable authentication flows with React Context",
+      "Managing application state efficiently without external libraries",
+      "Creating reusable UI components with Tailwind CSS",
+      "Developing production-ready responsive layouts",
+    ],
+    futureImprovements: [
+      "Integrate MongoDB or PostgreSQL for persistent storage",
+      "Develop a dedicated seller dashboard",
+      "Add payment gateway integration (bKash, Nagad, Stripe)",
+      "Implement Cloudinary or AWS S3 for image uploads",
+      "Add advanced filtering and search capabilities",
+      "Improve SEO using dynamic routes and server-side rendering",
+      "Add automated testing with Jest and Playwright",
+      "Enhance accessibility following WCAG guidelines",
+      "Convert the application into a Progressive Web App (PWA)",
+    ],
+    links: {
+      liveDemo: "https://a8-five.vercel.app/",
+    },
+    role: "Full-Stack Developer",
+    featured: true,
+    order: 3,
+  },
+  {
     title: "A09 Client",
     slug: "a09-client",
     shortDescription:
@@ -128,7 +192,8 @@ export const projects: IProject[] = [
     links: {
       liveDemo: "https://a09client.vercel.app/",
     },
+    featured: true,
     role: "Solo Developer",
-    order: 3,
+    order: 4,
   },
 ];
