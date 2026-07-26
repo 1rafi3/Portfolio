@@ -50,7 +50,7 @@ export function ResumeSection() {
               render={
                 <a
                   href={resume.file.url}
-                  download
+                  download="MD Sheik Rafiwol Karim Rafi resume.pdf"
                   onClick={handleDownload}
                 />
               }
@@ -61,17 +61,16 @@ export function ResumeSection() {
           </div>
         </div>
 
-        <div className="mt-10">
-          <h3 className="text-lg font-semibold text-foreground">Preview</h3>
-          <div className="mt-4 flex aspect-[210/297] w-full items-center justify-center rounded-lg border-2 border-dashed border-border/50 bg-muted/20 transition-colors hover:border-primary/20">
-            <div className="flex flex-col items-center gap-3 text-center">
-              <FileText className="h-10 w-10 text-muted-foreground/40" />
-              <p className="text-sm text-muted-foreground/60">
-                Resume preview will appear here
-              </p>
+          <div className="mt-10">
+            <h3 className="text-lg font-semibold text-foreground">Preview</h3>
+            <div className="mt-4 overflow-hidden rounded-lg border border-border/50 transition-colors hover:border-primary/20">
+              <iframe
+                src={resume.file.url}
+                className="aspect-[210/297] w-full"
+                title="Resume preview"
+              />
             </div>
           </div>
-        </div>
       </div>
       </section>
     </ScrollReveal>
