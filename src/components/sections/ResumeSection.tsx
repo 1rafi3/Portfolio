@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Download, FileText, Calendar } from "lucide-react";
 
 import { resume } from "@/data/resume";
@@ -49,10 +48,9 @@ export function ResumeSection() {
               className="shrink-0"
               disabled={!resume.available}
               render={
-                <Link
+                <a
                   href={resume.file.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  download
                   onClick={handleDownload}
                 />
               }

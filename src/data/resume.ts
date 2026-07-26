@@ -6,5 +6,5 @@ export const resume: IResume = {
     format: "pdf",
   },
   lastUpdated: "2026-07",
-  available: false,
+  available: true,
 };
