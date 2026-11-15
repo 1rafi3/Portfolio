@@ -52,7 +52,7 @@ export function ContactForm({ endpoint }: TContactFormProps) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="flex flex-col items-center gap-4 rounded-lg border border-border/50 bg-card p-12 text-center"
+          className="flex flex-col items-center gap-4 rounded-3xl glass-panel border border-white/10 p-12 text-center"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -75,7 +75,7 @@ export function ContactForm({ endpoint }: TContactFormProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           onSubmit={handleSubmit(onSubmit)}
-          className="rounded-lg border border-border/50 bg-card p-6"
+          className="rounded-3xl glass-panel border border-white/10 p-7 sm:p-9"
         >
           <div className="space-y-5">
             <div className="space-y-2">

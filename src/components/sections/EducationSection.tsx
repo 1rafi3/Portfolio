@@ -21,13 +21,13 @@ export function EducationSection() {
 
   return (
     <ScrollReveal>
-      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <SectionHeading variant="page" subtitle="My academic background">
+      <section className="relative px-4 py-16 lg:py-24 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="relative z-10 mx-auto max-w-4xl">
+          <SectionHeading variant="page" label="Academic Background" subtitle="Formal education, degrees, and academic milestones.">
             Education
           </SectionHeading>
 
-          <div className="mt-12 rounded-lg border border-border/50 bg-card p-6">
+          <div className="mt-14 rounded-3xl glass-panel p-7 sm:p-10 border border-white/10">
             <StaggerContainer staggerDelay={0.1}>
               {entries.map((entry) => (
                 <StaggerItem key={entry.title}>

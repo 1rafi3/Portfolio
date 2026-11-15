@@ -216,4 +216,49 @@ section[id] {
     0% { background-position: -200% center; }
     100% { background-position: 200% center; }
   }
+
+  /* ── Glassmorphism Utility Layers ── */
+  .glass-panel {
+    background: oklch(0.15 0.02 260 / 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid oklch(0.96 0.005 90 / 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 oklch(0.96 0.005 90 / 0.06);
+  }
+  .light .glass-panel {
+    background: oklch(1 0 0 / 0.75);
+    border: 1px solid oklch(0.13 0.02 260 / 0.08);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06), inset 0 1px 0 oklch(1 0 0 / 0.5);
+  }
+
+  .glass-pill {
+    background: oklch(0.12 0.02 260 / 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(0.96 0.005 90 / 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  }
+  .light .glass-pill {
+    background: oklch(1 0 0 / 0.85);
+    border: 1px solid oklch(0.13 0.02 260 / 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .ambient-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+
+  /* ── Lanyard Strap Gradient ── */
+  .lanyard-strap {
+    background: linear-gradient(180deg, #c52233 0%, #a51c2a 100%);
+    box-shadow: 0 4px 12px rgba(197, 34, 51, 0.4), inset 0 0 4px rgba(0,0,0,0.3);
+  }
+
+  @keyframes swing {
+    0% { transform: rotate(1.5deg); }
+    100% { transform: rotate(-1.5deg); }
+  }
 }

@@ -6,10 +6,10 @@ import { StaggerItem } from "@/components/shared/StaggerItem";
 
 export function SkillsSection() {
   return (
-    <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-5xl">
-        <SectionHeading variant="page" subtitle="Technologies and tools I work with">
-          Skills
+    <section className="relative px-4 py-16 lg:py-24 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="relative z-10 mx-auto max-w-5xl">
+        <SectionHeading variant="page" label="Capabilities" subtitle="Technologies, frameworks, databases, and engineering tools I work with.">
+          Skills &amp; Technologies
         </SectionHeading>
 
         <div className="mt-12 space-y-12">

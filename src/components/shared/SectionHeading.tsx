@@ -1,6 +1,7 @@
 interface ISectionHeadingProps {
   children: React.ReactNode;
   subtitle?: string;
+  label?: string;
   align?: "center" | "left";
   variant?: "page" | "section";
 }
@@ -8,6 +9,7 @@ interface ISectionHeadingProps {
 export function SectionHeading({
   children,
   subtitle,
+  label,
   align = "center",
   variant = "section",
 }: ISectionHeadingProps) {
@@ -25,6 +27,15 @@ export function SectionHeading({
           : "items-start text-left"
       }`}
     >
+      {label && (
+        <div className="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-widest text-[color:var(--cyan-accent)]">
+          <span
+            className="w-1.5 h-1.5 rounded-full"
+            style={{ backgroundColor: "var(--cyan-accent)" }}
+          />
+          <span>{label}</span>
+        </div>
+      )}
       <Tag className={headingSize}>
         {children}
       </Tag>

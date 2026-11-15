@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 import { projects } from "@/data/projects";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -20,17 +20,24 @@ export function FeaturedProjectsSection() {
 
   return (
     <ScrollReveal>
-      <section className="px-4 py-10 lg:py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative px-4 py-16 lg:py-24 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Subtle ambient glow behind featured projects */}
+        <div
+          className="ambient-glow w-[500px] h-[500px] -left-48 top-1/2 -translate-y-1/2 opacity-10"
+          style={{ backgroundColor: "var(--cyan-accent)" }}
+        />
+
+        <div className="relative z-10 mx-auto max-w-6xl">
           <SectionHeading
             variant="page"
-            subtitle="A selection of projects that showcase my skills and experience."
+            label="Selected Works"
+            subtitle="A selection of high-impact full-stack and AI applications engineered for performance and reliability."
           >
             Featured Projects
           </SectionHeading>
 
-          <StaggerContainer className="mt-12">
-            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <StaggerContainer className="mt-14">
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {featured.map((project) => (
                 <StaggerItem key={project.slug}>
                   <ProjectCard project={project} />
@@ -41,7 +48,7 @@ export function FeaturedProjectsSection() {
 
           {showButton && (
             <motion.div
-              className="mt-12 flex justify-center"
+              className="mt-14 flex justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
@@ -51,9 +58,13 @@ export function FeaturedProjectsSection() {
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
               >
-                <Button variant="default" render={<Link href="/projects" />}>
+                <Button
+                  variant="default"
+                  className="rounded-full px-6 py-2.5 font-semibold shadow-lg hover:shadow-cyan-500/20 transition-all duration-300"
+                  render={<Link href="/projects" />}
+                >
                   View All Projects
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 ml-1" />
                 </Button>
               </motion.div>
             </motion.div>
