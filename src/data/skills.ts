@@ -37,6 +37,8 @@ export const skillCategories: ISkillCategory[] = [
     skills: [
       { name: "DSA", category: "CS Fundamentals & Problem Solving" },
       { name: "Competitive Programming (CP)", category: "CS Fundamentals & Problem Solving" },
+      { name: "OOP", category: "CS Fundamentals & Problem Solving" },
+      { name: "DBMS", category: "CS Fundamentals & Problem Solving" },
     ],
   },
   {

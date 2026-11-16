@@ -262,6 +262,77 @@ export function TechIcon({ name, className = "h-6 w-6" }: ITechIconProps) {
           <circle cx="12" cy="2.5" r="1" fill="#FDE047" />
         </svg>
       );
+    case "oop":
+    case "objectorientedprogramming":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <rect x="7" y="2" width="10" height="5" rx="1.5" stroke="#00E5FF" strokeWidth="1.5" fill="#00E5FF" fillOpacity="0.1" />
+          <path d="M12 7v4" stroke="#00E5FF" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M6 11h12" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <path d="M6 11v3M18 11v3" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <rect x="2" y="14" width="8" height="6.5" rx="1.5" stroke="#38BDF8" strokeWidth="1.4" fill="#38BDF8" fillOpacity="0.1" />
+          <rect x="14" y="14" width="8" height="6.5" rx="1.5" stroke="#A78BFA" strokeWidth="1.4" fill="#A78BFA" fillOpacity="0.1" />
+          <circle cx="6" cy="17.25" r="1.2" fill="#38BDF8" />
+          <circle cx="18" cy="17.25" r="1.2" fill="#A78BFA" />
+        </svg>
+      );
+    case "dbms":
+    case "databasemanagementsystem":
+    case "databasemanagementsystems":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <ellipse cx="12" cy="6" rx="8" ry="3" stroke="#00E5FF" strokeWidth="1.5" fill="#00E5FF" fillOpacity="0.15" />
+          <path d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" stroke="#38BDF8" strokeWidth="1.5" />
+          <path d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" stroke="#00E5FF" strokeWidth="1.5" />
+          <path d="M8 12.5c1.1.4 2.5.6 4 .6s2.9-.2 4-.6" stroke="#38BDF8" strokeWidth="1.2" strokeLinecap="round" opacity="0.7" />
+        </svg>
+      );
+    case "codeforces":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <rect x="2.5" y="11" width="4.5" height="11" rx="1.5" fill="#FFD43B" />
+          <rect x="9.75" y="5" width="4.5" height="17" rx="1.5" fill="#318CE7" />
+          <rect x="17" y="2" width="4.5" height="20" rx="1.5" fill="#E83A38" />
+        </svg>
+      );
+    case "leetcode":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <path
+            d="M13.483 0a1.374 1.374 0 00-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 00-1.209 2.104 5.35 5.35 0 00-.125.513 5.527 5.527 0 00.062 2.362 5.83 5.83 0 00.349 1.017 5.938 5.938 0 001.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 00-1.951-.003l-2.396 2.392a3.021 3.021 0 01-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 01.666-1.607L9.4 7.89l4.908-5.348a1.375 1.375 0 00-.825-2.542z"
+            fill="#B3B1B0"
+          />
+          <path
+            d="M9.833 10.924a1.415 1.415 0 00-1.045 1.95 5.6 5.6 0 003.228 3.14 1.416 1.416 0 001.765-.826 1.416 1.416 0 00-.827-1.765 2.766 2.766 0 01-1.593-1.549 1.414 1.414 0 00-1.528-.95z"
+            fill="#FFA116"
+          />
+          <path
+            d="M21.905 13.911l-9.014-2.415a1.375 1.375 0 00-1.685 1.015 1.375 1.375 0 001.015 1.685l9.014 2.415a1.375 1.375 0 001.685-1.015 1.375 1.375 0 00-1.015-1.685z"
+            fill="#FFA116"
+          />
+        </svg>
+      );
+    case "hackerrank":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <rect width="24" height="24" rx="5" fill="#00EA64" />
+          <path
+            d="M14.8 6h-2.1v4.4H11.3V6H9.2v12h2.1v-4.6h1.4V18h2.1V6z"
+            fill="#030712"
+          />
+        </svg>
+      );
+    case "beecrowd":
+    case "uri":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10.5" fill="#1C1E26" stroke="#00E5FF" strokeWidth="1.5" />
+          <path
+            d="M7 8.5c0-1.1.9-2 2-2h4.5a3.5 3.5 0 012.5 5.9A3.8 3.8 0 0113.5 18H9a2 2 0 01-2-2V8.5zm3.5.5v3h3a1.5 1.5 0 000-3h-3zm0 5v3h3.5a1.5 1.5 0 000-3h-3.5z"
+            fill="#00E5FF"
+          />
+        </svg>
+      );
     default:
       return (
         <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

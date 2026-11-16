@@ -7,6 +7,7 @@ import { FeaturedSkillsSection } from "@/components/sections/FeaturedSkillsSecti
 import { WhyWorkWithMeSection } from "@/components/sections/WhyWorkWithMeSection";
 import { DevelopmentPhilosophySection } from "@/components/sections/DevelopmentPhilosophySection";
 import { CurrentLearningSection } from "@/components/sections/CurrentLearningSection";
+import { ProblemSolvingSection } from "@/components/sections/ProblemSolvingSection";
 import { GitHubActivitySection } from "@/components/sections/GitHubActivitySection";
 import { CTASection } from "@/components/sections/CTASection";
 
@@ -25,6 +26,7 @@ export default function HomePage() {
       <WhyWorkWithMeSection />
       <DevelopmentPhilosophySection />
       <CurrentLearningSection />
+      <ProblemSolvingSection />
       <GitHubActivitySection />
       <CTASection />
     </>
