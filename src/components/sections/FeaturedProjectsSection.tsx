@@ -21,6 +21,14 @@ export function FeaturedProjectsSection() {
   return (
     <ScrollReveal>
       <section className="relative px-4 py-16 lg:py-24 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Luminous ambient top glow bridge seamlessly connecting Hero and Projects */}
+        <div
+          className="ambient-glow w-[700px] h-[350px] left-1/2 -translate-x-1/2 -top-24 opacity-20 pointer-events-none"
+          style={{
+            background: "radial-gradient(ellipse at center, var(--cyan-accent) 0%, transparent 70%)",
+          }}
+        />
+
         {/* Subtle ambient glow behind featured projects */}
         <div
           className="ambient-glow w-[500px] h-[500px] -left-48 top-1/2 -translate-y-1/2 opacity-10"
@@ -28,6 +36,16 @@ export function FeaturedProjectsSection() {
         />
 
         <div className="relative z-10 mx-auto max-w-6xl">
+          {/* Seamless Luminous Section Divider Bridge */}
+          <div className="relative w-full max-w-4xl mx-auto mb-14 sm:mb-18 flex items-center justify-center">
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-[color:var(--cyan-accent)]/35 to-transparent" />
+            <div className="absolute w-full h-px blur-xs bg-gradient-to-r from-transparent via-[color:var(--cyan-accent)]/25 to-transparent" />
+            <div
+              className="absolute w-2 h-2 rounded-full shadow-[0_0_8px_var(--cyan-accent)]"
+              style={{ backgroundColor: "var(--cyan-accent)" }}
+            />
+          </div>
+
           <SectionHeading
             variant="page"
             label="Selected Works"

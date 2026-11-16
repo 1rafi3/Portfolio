@@ -129,11 +129,11 @@ function BackgroundLayers() {
         }}
       />
 
-      {/* Bottom vignette */}
+      {/* Bottom vignette — smoothly dissolves hero grid, particles, and circuits into base background */}
       <div
-        className="absolute inset-x-0 bottom-0 h-40 pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-56 sm:h-72 pointer-events-none z-10"
         style={{
-          background: `linear-gradient(to top, var(--hero-vignette-from) 0%, color-mix(in srgb, var(--hero-vignette-from) 80%, transparent) 60%, transparent 100%)`,
+          background: `linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--hero-vignette-from) 20%, transparent) 25%, color-mix(in srgb, var(--hero-vignette-from) 70%, transparent) 60%, var(--hero-vignette-from) 100%)`,
         }}
       />
 

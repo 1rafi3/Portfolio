@@ -8,6 +8,12 @@ export function DevelopmentPhilosophySection() {
   return (
     <ScrollReveal>
       <section className="relative px-4 py-16 lg:py-24 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Subtle ambient glow */}
+        <div
+          className="ambient-glow w-[500px] h-[500px] -left-48 top-1/2 -translate-y-1/2 opacity-10 pointer-events-none"
+          style={{ backgroundColor: "var(--cyan-accent)" }}
+        />
+
         <div className="relative z-10 mx-auto max-w-5xl">
           <SectionHeading
             variant="page"
