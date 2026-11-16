@@ -344,9 +344,26 @@ export function HeroBanner({ reducedMotion }: IHeroBannerProps) {
       aria-hidden="true"
     >
       <BackgroundLayers />
-      <WireframeCubes reducedMotion={isReduced} mousePos={mousePos} isDesktop={isDesktop} isLight={isLight} />
-      <CircuitTraces reducedMotion={isReduced} mousePos={mousePos} isDesktop={isDesktop} />
-      <ParticleField reducedMotion={isReduced} />
+      {/* Decorative layers with smooth vertical fade out mask */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          WebkitMaskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 95%)",
+          maskImage: "linear-gradient(to bottom, black 0%, black 60%, transparent 95%)",
+        }}
+      >
+        <WireframeCubes reducedMotion={isReduced} mousePos={mousePos} isDesktop={isDesktop} isLight={isLight} />
+        <CircuitTraces reducedMotion={isReduced} mousePos={mousePos} isDesktop={isDesktop} />
+        <ParticleField reducedMotion={isReduced} />
+      </div>
+
+      {/* Universal bottom vignette smoothly fading all hero graphics into the base background */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-72 sm:h-96 pointer-events-none z-20"
+        style={{
+          background: `linear-gradient(to bottom, transparent 0%, color-mix(in srgb, var(--hero-vignette-from) 25%, transparent) 30%, color-mix(in srgb, var(--hero-vignette-from) 70%, transparent) 65%, var(--hero-vignette-from) 100%)`,
+        }}
+      />
     </div>
   );
 }

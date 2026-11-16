@@ -42,7 +42,7 @@ export function HeroSection() {
   const isLight = theme === "light";
 
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden px-4 py-12 lg:py-20 sm:px-6 lg:px-8">
+    <section className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-x-clip px-4 py-12 lg:py-20 sm:px-6 lg:px-8">
       {/* Background visual layer */}
       {shouldReduceMotion ? (
         <HeroBanner reducedMotion />
