@@ -8,7 +8,7 @@ interface ITechIconProps {
 }
 
 export function TechIcon({ name, className = "h-6 w-6" }: ITechIconProps) {
-  const normalized = name.toLowerCase().replace(/[\s\.\-_]/g, "");
+  const normalized = name.toLowerCase().replace(/[\s\.\-_\(\)&]/g, "");
 
   switch (normalized) {
     case "react":
@@ -93,6 +93,23 @@ export function TechIcon({ name, className = "h-6 w-6" }: ITechIconProps) {
           <path d="M12 0s-7.5 7.15-7.5 12.87c0 4.14 3.36 7.5 7.5 7.5s7.5-3.36 7.5-7.5C19.5 7.15 12 0 12 0zm.75 18.72V5.28c2.9.64 5.25 3.1 5.25 6.09 0 3.44-2.6 6.27-6 6.64v.71z" />
         </svg>
       );
+    case "mysql":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <path
+            d="M21.5 13.5c-.3-1.8-1.5-3.3-3.2-4.1-.8-.4-1.7-.5-2.6-.4-.7.1-1.4.4-2 .8-.7-.9-1.8-1.5-3-1.7-1.5-.2-3 .3-4.2 1.3-.9.8-1.5 1.9-1.7 3.1-.2 1.2.1 2.5.8 3.5.5.7 1.2 1.3 2 1.7.3.2.7.2 1 0 .3-.2.4-.6.3-.9-.3-.5-.7-1.1-.8-1.7-.2-1 .1-2 .7-2.8.7-.9 1.8-1.4 3-1.3.9.1 1.7.6 2.2 1.3.2.3.6.5 1 .4.4-.1.7-.4.8-.8.3-.7.8-1.2 1.5-1.4.6-.2 1.3-.1 1.9.2 1.1.6 1.9 1.7 2.1 2.9.1.5.5.9 1 .9h.2c.5-.1.9-.5.8-1z"
+            fill="#00758F"
+          />
+          <path
+            d="M17.5 15.5c-.5 0-1 .2-1.3.6-.3.4-.4.9-.2 1.4.3.7.8 1.3 1.5 1.7 1 .5 2.1.6 3.1.2 1-.4 1.8-1.2 2.1-2.2.1-.5-.1-1-.6-1.3-.5-.2-1-.1-1.3.4-.2.5-.6.9-1.1 1.1-.5.2-1.1.1-1.6-.1-.4-.2-.7-.5-.9-.9-.1-.2-.4-.4-.7-.4z"
+            fill="#F29111"
+          />
+          <path
+            d="M2.5 15c.5 2.5 2.5 4.5 5.5 5.5 3 .9 6.5.6 9.5-.8.5-.2.7-.8.5-1.3-.2-.5-.8-.7-1.3-.5-2.4 1.1-5.2 1.3-7.6.6-2.3-.7-3.9-2.3-4.3-4.2-.1-.5-.6-.9-1.1-.8-.5.1-.9.6-.8 1.1z"
+            fill="#00758F"
+          />
+        </svg>
+      );
     case "java":
       return (
         <svg className={className} viewBox="0 0 24 24">
@@ -174,6 +191,75 @@ export function TechIcon({ name, className = "h-6 w-6" }: ITechIconProps) {
               <stop offset="1" stopColor="#C58AF9" />
             </linearGradient>
           </defs>
+        </svg>
+      );
+    case "xampp":
+      return (
+        <svg className={className} viewBox="0 0 24 24">
+          <rect width="24" height="24" rx="5" fill="#FB7A24" />
+          <path
+            d="M12 9.2a2.8 2.8 0 100 5.6 2.8 2.8 0 000-5.6zm0 4.2a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8z"
+            fill="#FFFFFF"
+          />
+          <path
+            d="M7.4 6.2a1.6 1.6 0 00-1.6 1.6v1.4a1.6 1.6 0 001.6 1.6h1.2V6.2H7.4zm9.2 0h-1.2v4.6h1.2a1.6 1.6 0 001.6-1.6V7.8a1.6 1.6 0 00-1.6-1.6zM7.4 13.2H6.2a1.6 1.6 0 00-1.6 1.6v1.4a1.6 1.6 0 001.6 1.6h2.4a1.6 1.6 0 001.6-1.6v-1.8H7.4v-1.2zm9.2 0v1.2h-2.8v1.8a1.6 1.6 0 001.6 1.6h2.4a1.6 1.6 0 001.6-1.6v-1.4a1.6 1.6 0 00-1.6-1.6z"
+            fill="#FFFFFF"
+          />
+        </svg>
+      );
+    case "netbeans":
+    case "apachenetbeans":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L3 7.2v9.6L12 22l9-5.2V7.2L12 2z" fill="#1B6AC6" />
+          <path d="M12 2v10l9-4.8L12 2z" fill="#4696EC" />
+          <path d="M12 12v10l9-5.2V7.2L12 12z" fill="#2478D6" />
+          <path d="M3 7.2l9 4.8v10L3 16.8V7.2z" fill="#14539A" />
+          <path d="M12 5.5l5.5 3.2-5.5 3.2-5.5-3.2L12 5.5z" fill="#90C2F9" opacity="0.9" />
+        </svg>
+      );
+    case "dsa":
+    case "datastructures":
+    case "datastructuresalgorithms":
+    case "datastructuresalgorithmsdsa":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <line x1="12" y1="5.5" x2="6" y2="12.5" stroke="#00E5FF" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="12" y1="5.5" x2="18" y2="12.5" stroke="#00E5FF" strokeWidth="1.8" strokeLinecap="round" />
+          <line x1="6" y1="12.5" x2="4" y2="18.5" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="6" y1="12.5" x2="8.5" y2="18.5" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="18" y1="12.5" x2="15.5" y2="18.5" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="18" y1="12.5" x2="20" y2="18.5" stroke="#38BDF8" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="12" cy="5" r="3" fill="#00E5FF" />
+          <circle cx="12" cy="5" r="1.4" fill="#030712" />
+          <circle cx="6" cy="12.5" r="2.5" fill="#38BDF8" />
+          <circle cx="6" cy="12.5" r="1.1" fill="#030712" />
+          <circle cx="18" cy="12.5" r="2.5" fill="#38BDF8" />
+          <circle cx="18" cy="12.5" r="1.1" fill="#030712" />
+          <circle cx="4" cy="18.5" r="1.8" fill="#818CF8" />
+          <circle cx="8.5" cy="18.5" r="1.8" fill="#818CF8" />
+          <circle cx="15.5" cy="18.5" r="1.8" fill="#818CF8" />
+          <circle cx="20" cy="18.5" r="1.8" fill="#818CF8" />
+        </svg>
+      );
+    case "cp":
+    case "competitiveprogramming":
+    case "competitiveprogrammingcp":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none">
+          <path d="M7 4h10v5c0 2.8-2.2 5-5 5s-5-2.2-5-5V4z" fill="#F59E0B" />
+          <path d="M7 5H5a2 2 0 00-2 2v1a3 3 0 003 3h1V9H6a1 1 0 01-1-1V7a1 1 0 011-1h1V5z" fill="#D97706" />
+          <path d="M17 5h2a2 2 0 012 2v1a3 3 0 01-3 3h-1V9h1a1 1 0 001-1V7a1 1 0 00-1-1h-1V5z" fill="#D97706" />
+          <path d="M11 14h2v4h-2z" fill="#D97706" />
+          <path d="M6 18h12v2.5a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5V18z" fill="#B45309" />
+          <path
+            d="M10 7.5L8.5 9 10 10.5M14 7.5L15.5 9 14 10.5M12.5 7L11.5 11"
+            stroke="#030712"
+            strokeWidth="1.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <circle cx="12" cy="2.5" r="1" fill="#FDE047" />
         </svg>
       );
     default:

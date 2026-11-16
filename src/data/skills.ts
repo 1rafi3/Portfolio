@@ -18,17 +18,25 @@ export const skillCategories: ISkillCategory[] = [
     skills: [
       { name: "Node.js", category: "Backend & Database" },
       { name: "Express.js", category: "Backend & Database" },
-      { name: "JWT", category: "Backend & Database" },
+      { name: "MySQL", category: "Backend & Database" },
       { name: "MongoDB", category: "Backend & Database" },
+      { name: "JWT", category: "Backend & Database" },
     ],
   },
   {
     categoryName: "Programming Languages",
     skills: [
+      { name: "C", category: "Programming Languages" },
+      { name: "C++", category: "Programming Languages" },
       { name: "Java", category: "Programming Languages" },
       { name: "Python", category: "Programming Languages" },
-      { name: "C++", category: "Programming Languages" },
-      { name: "C", category: "Programming Languages" },
+    ],
+  },
+  {
+    categoryName: "CS Fundamentals & Problem Solving",
+    skills: [
+      { name: "DSA", category: "CS Fundamentals & Problem Solving" },
+      { name: "Competitive Programming (CP)", category: "CS Fundamentals & Problem Solving" },
     ],
   },
   {
@@ -37,6 +45,8 @@ export const skillCategories: ISkillCategory[] = [
       { name: "Git", category: "Tools & Platforms" },
       { name: "GitHub", category: "Tools & Platforms" },
       { name: "VS Code", category: "Tools & Platforms" },
+      { name: "NetBeans", category: "Tools & Platforms" },
+      { name: "XAMPP", category: "Tools & Platforms" },
       { name: "Postman", category: "Tools & Platforms" },
       { name: "Figma", category: "Tools & Platforms" },
     ],
